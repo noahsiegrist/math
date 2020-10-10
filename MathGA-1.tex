@@ -13,7 +13,7 @@
 \setlength\parindent{0pt}
 
 \title{Mathe GA-1}
-\author{Jan, Mariel, Noah Siegrist}
+\author{Mariel Alaba, Jan Meier, Noah Siegrist}
 \date{\today}
 
 \begin{document}
@@ -53,7 +53,7 @@ Keine Logische Aussagen:
   \item Mach Feuer! (Befehl)
   \item Das Feuer ist x grad warm. (“Aussageform” (siehe später), aber keine Aussage!)
 \end{itemize}
-
+\newpage
 \subsection{Aussagenlogische Verknüspfungen}
 Logische Aussagen können verknüpft werden mittels Aussagenlogische Verknüpfungen oder auch “Konnektoren”, “Junktoren” oder “Operatoren” gennant. Diese Verknüpfungen können jeweils mit \textbf{Wahrheitstabellen} definiert werden.
 
@@ -154,7 +154,7 @@ Wenn Max am Feuer sitzt, hat er warm.
   \textit{(Trotzdem das Max am Feuer sitzt hat er Kalt. Die Aussage ist nun falsch.)}
   \item Max sitzt am Feuer und er hat warm. \textit{(Wahr)}
 \end{itemize}
-\newpage
+
 \subsubsection{Äquivalenz (genau dann, wenn)}
 
 A \textbf{Genau dann, wenn} B wird wie folgt geschrieben: \( A \iff B \)
@@ -181,6 +181,15 @@ Genau dann, wenn Max am Feuer sitzt, hat er warm.
   \textit{(Trotzdem das Max am Feuer sitzt hat er Kalt. Aussage falsch.)}
   \item Max sitzt am Feuer und er hat warm. \textit{(Wahr)}
 \end{itemize}
+\subsection{Atomare Aussage}
+Eine Atomare Aussage, ist eine Aussage ohne jeglichen Verknüpfungen oder Negationen. Also bei der Aussagelogischer Formel ( \(f = A \land \neg B \land B\) ) sind die Atomaren Aussagen ( \(A\) und \(B\) ).
+
+\subsection{Literal}
+Ein Literal, ist eine Aussage ohne jeglichen Verknüpfungen. Im Gegensatz zur Atomaren Aussage sind hier Negationen nicht ausgeschlossen. Also bei der Aussagelogischer Formel ( \(f = A \land \neg B \land B\) ) sind die Literal ( \(A\), \(B\) und \(\neg B\) ).
+
+
+
+\newpage
 \subsection{Aussagenlogische Formel}
 In der Aussagenlogischen Formel können nun komplexe Zusammenhänge erstellt werden. Wie zum Beispiel:
 
@@ -224,25 +233,54 @@ Wobei sich das Absorptionsgesetz auf dem Idempotenzgesetz und dem Identitatsgese
 \subsection{Normalformen}
 Das Ziel der Normalformen ist es eine Komplexe Formel in eine semantisch äquivalente einfacher zu verstehende form zu bringen.
 \subsubsection{Konjunktive Normalform (KNF)}
+In der KNF ist es das Ziel, dass im obersten level der Aussagelogischen Formel nur Konjunktionen vorhanden sind. Diese halten so genante "Klauseln der konjunktiven Normalform" zusammen.
+\begin{displaymath}
+  f = f_1 \land f_2 \land ... \land f_n
+\end{displaymath}
+
+Die \(f_1\) bis \(f_n\) sind dabei die Klauseln, wobei eine solche Klausel aus Disjunktion und Literalen bestehen. Hier am Beispiel von der ersten Klausel:
+\begin{displaymath}
+  f_1 = L_{11} \lor L_{12} \lor ... \lor L_{1n}
+\end{displaymath}
+
+\subsubsection{Disjunktive Normalform (KNF)}
+
+In der DNF ist es das Ziel, dass im obersten level der Aussagelogischen Formel nur Disjunktionen vorhanden sind. Diese halten so genante "Klauseln der disjunktiven Normalform" zusammen.
+\begin{displaymath}
+  f = f_1 \lor f_2 \lor ... \lor f_n
+\end{displaymath}
+
+Die \(f_1\) bis \(f_n\) sind dabei die Klauseln, wobei eine solche Klausel aus Disjunktion und Literalen bestehen. Hier am beispiel von der ersten Klausel:
+\begin{displaymath}
+  f_1 = L_{11} \land L_{12} \land ... \land L_{1n} 
+\end{displaymath}
 
 
+\subsubsection{Beispiele}
+\begin{itemize}
+  \item \((A \lor B) \land (C \lor \neg D) \land (\neg E \lor F)  \) (KNF)
+  \item \((A \land B) \lor (C \land \neg D) \lor (\neg E \land F)  \) (DNF)
+  \item \((A \lor B) \lor (C \land \neg D) \lor (\neg E \land F)  \) (Diese Formel kann weiter zur DNF gebracht werden indem die ersten Klammern entfernt werden dank dem Assoziativgesetz.)
+  	
+  	 \(A \lor B \lor (C \land \neg D) \lor (\neg E \land F)  \)
+  \item \((A \lor \neg (C \land D)) \land (\neg E \lor F)  \) (Diese Formel kann weiter zur KNF gebracht werden mit dem dem de Morgan Gesetz und dem Distributivitatsgesetz.)
+ 	\((A \lor (\neg C \land \neg D)) \land (\neg E \lor F)  \)
+ 	
+  	\( (A \lor \neg C) \land (A \lor \neg D) \land (\neg E \lor F)  \)
+    
+\end{itemize}
 
+\subsection{Belegung und Modelle}
+Unter einer Belegung verstehen wir eine Zuordnung der Atomaren Aussagen zu einem effektiven Wert. So zu sagen eine Zeile aus der Wahrheitstabelle anders repräsentiert.
 
+Wenn diese Belegung nun die Aussagelogische Formel wahr macht, so wird die Belegung Modell genannt.
 
+%TODO: Beispiel für Belegung und Model... Wie wird das geschrieben?
 
+\subsection{Erfüllbarkeit}
+Wenn eine Aussagenlogische Formel wird \textbf{erfüllbar} gennant, wenn mindestens ein Modell in der Wahrheitstabelle gefunden werden kann. Falls kein Modell gefunden werden kann, so handelt es sich um eine \textbf{Kontradiktion / Widerspruch}. \textit{Das warme Feuer ist kalt.}
 
-
-
-
-
-
-
-
-
-
-
-
-
+Falls in der Wahrheitstabelle nur Modelle gefunden werden können, so nennen wir die Aussagenlogische Formel eine \textbf{Tautologie}. \textit{Das warme oder kalter Feuer.} 
 
 
 
