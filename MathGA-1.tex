@@ -1,7 +1,7 @@
 \documentclass{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc} %Umlaute etc.%
+\usepackage[ngerman]{babel} %German charset%
 \usepackage{color}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -46,7 +46,7 @@ Logische Aussagen:
   \item Wenn das Feuer brennt, trocknen die Kleider schneller. (w)
 \end{itemize}
 
-Nicht Logische Aussagen:
+Keine Logische Aussagen:
 \begin{itemize}
   \item Ist das Feuer warm? (Frage)
   \item Feuer kühlt und wärmt. (Widerspruch, Paradoxem)
@@ -57,18 +57,127 @@ Nicht Logische Aussagen:
 \subsection{Aussagenlogische Verknüspfungen}
 Logische Aussagen können verknüpft werden mittels Aussagenlogische Verknupfungen oder auch “Konnektoren”, “Junktoren” oder “Operatoren” gennant. Diese verknüpfungen können jeweils mit \textbf{Wahrheitstabellen} definiert werden.
 
-\subsubsection{Konjunktion und}
-A \textbf{und} B
+\subsubsection{Negation (nicht)}
+Die negation ist keine Verknüpfung sondern invertiert eine Logische Aussage.
+\textbf{Nicht} A wird wie folgt geschrieben: \( \neg A \)
+
+\subsubsection*{Wahrheitstabelle}
+\begin{tabular}{c || c}
+  A & \( \neg A \) \\
+  \hline
+  0  & 1 \\
+  1  & 0\\
+\end{tabular}\break
+
+\subsubsection*{Beispiele}
+
+\begin{itemize}
+  \item Feuer ist \textbf{nicht} kalt. (w)
+  \item Feuer ist \textbf{nicht} heiss. (f)
+\end{itemize}
+
+\subsubsection{Konjunktion (und)}
+A \textbf{und} B wird wie folgt geschrieben: \( A \land B \)
+
+\subsubsection*{Wahrheitstabelle}
+\begin{tabular}{c|c || c}
+  A & B & \( A \land B \) \\
+  \hline
+  0 & 0 & 0 \\
+  0 & 1 & 0\\
+  1 & 0 & 0\\
+  1 & 1 & 1\\
+\end{tabular}
+
+\subsubsection*{Beispiele}
+
+\begin{itemize}
+  \item Feuer ist kalt \textbf{und} Feuer ist flüssig. (f)
+  \item Feuer ist kalt \textbf{und} Feuer ist eine chemische Reaktion. (f)
+  \item Feuer ist heiss \textbf{und} Feuer ist flüssig. (f)
+  \item Feuer ist heiss \textbf{und} Feuer ist eine chemische Reaktion. (w)
+\end{itemize}
 
 
- 
-\subsubsection{Disjunktion}
-\subsubsection{Negation}
-\subsubsection{Implikation}
-\subsubsection{Aquivalenz}
+\subsubsection{Disjunktion (oder)}
+A \textbf{oder} B wird wie folgt geschrieben: \( A \lor B \)
 
+\subsubsection*{Wahrheitstabelle}
+\begin{tabular}{c|c || c}
+  A & B & \( A \lor B \) \\
+  \hline
+  0 & 0 & 0 \\
+  0 & 1 & 1\\
+  1 & 0 & 1\\
+  1 & 1 & 1\\
+\end{tabular}\break
 
+Beim Logischem oder ist anzumerken, dass es sich vom entweder oder unterschiedet indem, dass wenn beide Seiten korrekt sind ist das Ergebnis auch Korrekt.
 
+\subsubsection*{Beispiele}
 
+\begin{itemize}
+  \item Feuer ist kalt \textbf{oder} Feuer ist flüssig. (f)
+  \item Feuer ist kalt \textbf{oder} Feuer ist eine chemische Reaktion. (w)
+  \item Feuer ist heiss \textbf{oder} Feuer ist flüssig. (w)
+  \item Feuer ist heiss \textbf{oder} Feuer ist eine chemische Reaktion. (w)
+\end{itemize}
+
+\subsubsection{Implikation (wenn, dann)}
+
+\textbf{Wenn} A, \textbf{dann} B wird wie folgt geschrieben: \( A \implies B \)
+
+\subsubsection*{Wahrheitstabelle}
+\begin{tabular}{c|c || c}
+  A & B & \( A \implies B \) \\
+  \hline
+  0 & 0 & 1 \\
+  0 & 1 & 1\\
+  1 & 0 & 0\\
+  1 & 1 & 1\\
+\end{tabular}\break
+
+Wenn A nicht war ist, kann B wahr oder falsch sein, die Aussage ist damit jedoch \textbf{nicht falsch}!
+
+\subsubsection*{Beispiele}
+Wenn Max am Feuer sitzt, hat er warm.
+\begin{itemize}
+  \item Max sitzt nicht am Feuer und er hat kalt. 
+  \textit{(Wenn Max nicht am Feuer sitzt, ist es nicht mein Problem wenn er kalt hat. Die Aussage ist nicht falsch, also wahr.)}
+  \item Max sitzt nicht am Feuer und er hat warm. 
+  \textit{(Wenn Max nicht am Feuer sitzt, kann er trotzdem warm haben. Die Aussage ebenfalls nicht falsch, also wahr.)
+}  \item Max sitzt am Feuer und er hat kalt. 
+  \textit{(Trotzdem das Max am Feuer sitzt hat er Kalt. Die Aussage ist nun falsch.)}
+  \item Max sitzt am Feuer und er hat warm. \textit{(Wahr)}
+\end{itemize}
+\newpage
+\subsubsection{Äquivalenz (genau dann, wenn)}
+
+A \textbf{Genau dann, wenn} B wird wie folgt geschrieben: \( A \iff B \)
+
+\subsubsection*{Wahrheitstabelle}
+\begin{tabular}{c|c || c}
+  A & B & \( A \iff B \) \\
+  \hline
+  0 & 0 & 1 \\
+  0 & 1 & 0\\
+  1 & 0 & 0\\
+  1 & 1 & 1\\
+\end{tabular}\break
+
+\subsubsection*{Beispiel}
+Genau dann, wenn Max am Feuer sitzt, hat er warm.
+\begin{itemize}
+  \item Max sitzt nicht am Feuer und er hat kalt. 
+  \textit{(Wahr)}
+  \item Max sitzt nicht am Feuer und er hat warm. 
+  \textit{(Max hat auch warm ohne, dass er dazu am Feuer sitzen muss. Aussage falsch.)}
+  \item Max sitzt am Feuer und er hat kalt. 
+  \textit{(Trotzdem das Max am Feuer sitzt hat er Kalt. Aussage falsch.)}
+  \item Max sitzt am Feuer und er hat warm. \textit{(Wahr)}
+\end{itemize}
+
+\subsection{Aussagenlogische Formel}
+\( \implies\)  und \(\iff\) 
 
 \end{document}
