@@ -55,10 +55,11 @@ Keine Logische Aussagen:
 \end{itemize}
 
 \subsection{Aussagenlogische Verknüspfungen}
-Logische Aussagen können verknüpft werden mittels Aussagenlogische Verknupfungen oder auch “Konnektoren”, “Junktoren” oder “Operatoren” gennant. Diese verknüpfungen können jeweils mit \textbf{Wahrheitstabellen} definiert werden.
+Logische Aussagen können verknüpft werden mittels Aussagenlogische Verknüpfungen oder auch “Konnektoren”, “Junktoren” oder “Operatoren” gennant. Diese Verknüpfungen können jeweils mit \textbf{Wahrheitstabellen} definiert werden.
 
 \subsubsection{Negation (nicht)}
-Die negation ist keine Verknüpfung sondern invertiert eine Logische Aussage.
+Die negation ist keine Verknüpfung sondern invertiert eine Logische Aussage. Sie bindet am stärksten und bildet somit auch ein Literal. 
+
 \textbf{Nicht} A wird wie folgt geschrieben: \( \neg A \)
 
 \subsubsection*{Wahrheitstabelle}
@@ -79,6 +80,7 @@ Die negation ist keine Verknüpfung sondern invertiert eine Logische Aussage.
 \subsubsection{Konjunktion (und)}
 A \textbf{und} B wird wie folgt geschrieben: \( A \land B \)
 
+Sie bindet am zweit stärksten direkt nach der Negation.
 \subsubsection*{Wahrheitstabelle}
 \begin{tabular}{c|c || c}
   A & B & \( A \land B \) \\
@@ -102,6 +104,7 @@ A \textbf{und} B wird wie folgt geschrieben: \( A \land B \)
 \subsubsection{Disjunktion (oder)}
 A \textbf{oder} B wird wie folgt geschrieben: \( A \lor B \)
 
+Sie bindet ebenfalls am zweit stärksten direkt nach der Negation.
 \subsubsection*{Wahrheitstabelle}
 \begin{tabular}{c|c || c}
   A & B & \( A \lor B \) \\
@@ -127,6 +130,7 @@ Beim Logischem oder ist anzumerken, dass es sich vom entweder oder unterschiedet
 
 \textbf{Wenn} A, \textbf{dann} B wird wie folgt geschrieben: \( A \implies B \)
 
+Sie bindet am dritt stärksten nach der Konjunktion und der Disjunktion.
 \subsubsection*{Wahrheitstabelle}
 \begin{tabular}{c|c || c}
   A & B & \( A \implies B \) \\
@@ -155,6 +159,7 @@ Wenn Max am Feuer sitzt, hat er warm.
 
 A \textbf{Genau dann, wenn} B wird wie folgt geschrieben: \( A \iff B \)
 
+Sie bindet ebenfalls am dritt stärksten nach der Konjunktion und der Disjunktion.
 \subsubsection*{Wahrheitstabelle}
 \begin{tabular}{c|c || c}
   A & B & \( A \iff B \) \\
@@ -176,8 +181,83 @@ Genau dann, wenn Max am Feuer sitzt, hat er warm.
   \textit{(Trotzdem das Max am Feuer sitzt hat er Kalt. Aussage falsch.)}
   \item Max sitzt am Feuer und er hat warm. \textit{(Wahr)}
 \end{itemize}
-
 \subsection{Aussagenlogische Formel}
-\( \implies\)  und \(\iff\) 
+In der Aussagenlogischen Formel können nun komplexe Zusammenhänge erstellt werden. Wie zum Beispiel:
+
+\begin{displaymath}
+ f = (A \land B) \implies C
+\end{displaymath}
+
+\subsubsection{Syntax}
+Regeln wie elementare Zeichen (Symbole) – oder auch Symbolgruppen – korrekt
+zusammengesetzt werden dürfen. 
+
+\subsubsection{Semantik}
+Bedeutungslehre. Zwei aussagenlogische Formeln sind semantisch gleich oder äquivalent (symbolisch \(f \equiv g\)), wenn ihre Wahrheitstabellen identisch sind. Beachte das Symbol unterscheidet sich vom \( \iff \).
+
+Daher, dass gewisse Ausdrücke Semantisch äquivalent sein können ergeben sich folgende Rechengesetze:
+
+\begin{tabular}{l|cc}
+  Name & Gesetz \\
+  \hline
+  Idempotenzgesetz & \(A \land A \equiv A  \) & \(A \lor A \equiv A  \)\\
+  \hline
+  Kommutativgesetz & \(A \land B \equiv B \land A \) & \(A \lor B \equiv B \lor A \) \\
+  \hline
+  Identitatsgesetz & \(A \land true \equiv A \)   & \(A \lor true \equiv true \) \\
+  & \(A \land false \equiv false \) & \(A \lor false \equiv A \)\\
+  \hline
+  Assoziativgesetz & \((A \land B) \land C \equiv A \land (B \land C)\) & \((A \lor B) \lor C \equiv A \lor (B \lor C)\) \\
+  \hline
+  Absorptionsgesetz & \(A \land (A \lor B) \equiv A\) & \(A \lor (A \land B)\equiv A\) \\
+  \hline
+  Distributivitatsgesetz & \(A \land (B \lor C) \equiv (A \land B) \lor (A \land C)\) & \(A \lor (B \land C) \equiv (A \lor B) \land (A \lor C)\) \\
+  \hline
+  De Morgan Gesetz & \(\neg(A \land B)\equiv \neg A \land \neg B\) & \(\neg(A \lor B)\equiv \neg A \lor \neg B\) \\
+  \hline
+  Negationsgesetz & \(\neg\neg A \equiv A\)\\
+\end{tabular}
+
+
+Wobei sich das Absorptionsgesetz auf dem Idempotenzgesetz und dem Identitatsgesetz aufbaut.
+
+\subsection{Normalformen}
+Das Ziel der Normalformen ist es eine Komplexe Formel in eine semantisch äquivalente einfacher zu verstehende form zu bringen.
+\subsubsection{Konjunktive Normalform (KNF)}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
