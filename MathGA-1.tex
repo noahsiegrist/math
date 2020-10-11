@@ -1,4 +1,14 @@
-\documentclass{article}
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{blindtext} %optimizes spaces & layout stuff, can fill some blindtext so check layout behaviour%
+\usepackage{avant} %font%
+\usepackage{microtype} %justification of document%
+\usepackage{wrapfig} %wrap text around pictures%
+\usepackage{enumitem} %optimize list layout, more compact%
+\usepackage{fancyhdr} %testing styles%
+\usepackage{index} %custom indexing%
+\usepackage[singlespacing]{setspace} %set spacing property%
+\usepackage{tabularx} %format tabular%
 
 \usepackage[utf8]{inputenc} %Umlaute etc.%
 \usepackage[ngerman]{babel} %German charset%
@@ -12,18 +22,43 @@
 \setlength{\parskip}{1em}
 \setlength\parindent{0pt}
 
-\title{Mathe GA-1}
+\usepackage{geometry}
+\geometry{a4paper, total={170mm,257mm},left=30mm,right=20mm,top=25mm,bottom=15mm}
+
+\makeindex
+
+\title{\large{\textbf{Mathe GA-1}}}
 \author{Mariel Alaba, Jan Meier, Noah Siegrist}
 \date{\today}
 
+\usepackage{titling}
+\renewcommand\maketitlehooka{\null\mbox{}\vfill}
+\renewcommand\maketitlehookd{\vfill\null}
+
 \begin{document}
 
-\maketitle	
+\begin{titlingpage}
+\maketitle
+\end{titlingpage}
+
+\newpage
+\cfoot[plain]{scrheadings}
 \tableofcontents
+
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{fancy}
+\fancyhf{} %clear footers style%
+\fancyhead[LE,RO]{\nouppercase{\leftmark}}
+\fancyfoot[LE,RO]{\centering{\thepage}}
+
 \newpage
 
 \section{Logik}
-Die Logik dient dazu komplexe Probleme analytisch zu Lösen. Sie bricht die Sprache auf eine abstrakte form herunter, die eindeutig und genau ist. Somit ist die Logik ein Grundbaustein aller Wissenschaften.
+\enlargethispage{\baselineskip}
+Die Logik dient dazu komplexe Probleme analytisch zu Lösen. Sie bricht die Sprache auf eine abstrakte Form herunter, die eindeutig und genau ist. Somit ist die Logik ein Grundbaustein aller Wissenschaften.
 
 \subsection{Logische Aussage}
 
@@ -31,6 +66,7 @@ Die Logik dient dazu komplexe Probleme analytisch zu Lösen. Sie bricht die Spra
 
 Eine (logische) Aussage kann immer als \textbf{wahr (w)} order \textbf{falsch (f)} identifiziert werden. Wenn die Aussage nicht \textbf{eindeutig} mit w oder f beantwortet werden kann, so ist die Aussage nicht logisch.
 
+\setlist{nolistsep}
 \begin{itemize}
 	\item[] Eine Aussage kann auch aus mehreren \textbf{Teilaussagen} bestehen. Dann heisst sie \textbf{zusammengesetzte Aussage} oder auch \textbf{aussagenlogische Formel}.
 	\item[] Die \textbf{Elementaraussage} oder auch \textbf{atomare Aussage} ist eine Aussage welche aus einer Teilaussage besteht.
@@ -54,7 +90,7 @@ Keine Logische Aussagen:
   \item Das Feuer ist x grad warm. (“Aussageform” (siehe später), aber keine Aussage!)
 \end{itemize}
 \newpage
-\subsection{Aussagenlogische Verknüspfungen}
+\subsection{Aussagenlogische Verknüpfungen}
 Logische Aussagen können verknüpft werden mittels Aussagenlogische Verknüpfungen oder auch “Konnektoren”, “Junktoren” oder “Operatoren” gennant. Diese Verknüpfungen können jeweils mit \textbf{Wahrheitstabellen} definiert werden.
 
 \subsubsection{Negation (nicht)}
@@ -143,6 +179,8 @@ Sie bindet am dritt stärksten nach der Konjunktion und der Disjunktion.
 
 Wenn A nicht war ist, kann B wahr oder falsch sein, die Aussage ist damit jedoch \textbf{nicht falsch}!
 
+\pagebreak
+
 \subsubsection*{Beispiele}
 Wenn Max am Feuer sitzt, hat er warm.
 \begin{itemize}
@@ -189,7 +227,7 @@ Ein Literal, ist eine Aussage ohne jeglichen Verknüpfungen. Im Gegensatz zur At
 
 
 
-\newpage
+%\newpage
 \subsection{Aussagenlogische Formel}
 In der Aussagenlogischen Formel können nun komplexe Zusammenhänge erstellt werden. Wie zum Beispiel:
 
