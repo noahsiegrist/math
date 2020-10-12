@@ -415,7 +415,7 @@ Es gibt diverse Operationen, die in der Mengenlehre verwendet werden. Folgende w
 \begin{itemize}
   \item Vereinigung $\cup$ - Mengenkonjunktion
   \item Durchschnitt $\cap$ - Mengendisjunktion
-  \item Differenz $\setminus$ - diese ist in 3 Sektoren eingeteilt
+  \item Differenz $\setminus$
   \item Symmetrische Differenz $\Delta$
   \item Komplement $A^{c}$
   \item Kartesisches Produkt $\times$
@@ -450,6 +450,54 @@ $A^{c} \equiv \vec{A}$ := \{$x \in G$ : $x \not\in A$\} = $G \setminus A$ \\
 Dies bezeichnet eine Menge geordneter Paare: \\
 $A \times B$ := \{$(x, y) : x \in A \land y \in B$\} \\
 \textbf{Beispiel:} $A \times B$ := \{$(2,8), (2,16), (4,8), (4,16)$\}
+
+\subsubsection{Gesetze der Mengenalgebra}
+Generell ist zusätzlich nur die Elementeoperation $\in$ notwendig, alle weiteren Operatoren können von der Logik übernommen werden. \\
+Der Grund für die Mengenalgebra ist, dass möglichst einfach die Gleichheit von Mengen getestet werden kann.
+
+\subsubsection{Bindungsstärken (Prioritäten)}
+\begin{tabular}{l|l|l}
+  Bindungsstärke & (Aussagen- und Prädikaten-) Logik & Mengentheorie \\
+  \hline
+  Höchste & \textit{Klammern} & \textit{Klammern} \\
+   & \( \forall, \exists, \exists! \) & \( ^{c}  \phantom{A}(bzw. \overline{\phantom{A}})\) \\
+   & \(\lnot\) & \(\bigcup, \bigcap, \Pi\)  \phantom{abcdef}(D. h. $\bigcap\limits_{k=1}^n,\bigcup\limits_{k=1}^n,\prod\limits_{k=1}^{n}$)\\
+  & \(\in,\not\in,\land,\lor,\textit{XOR},\subseteq,\subset\,=,\neq\) & \(\cup,\cap,\Delta,\setminus,\times\) \\
+  Niedrigste & \(\Longrightarrow,\Longleftrightarrow\) \\
+  \hline
+\end{tabular}
+
+\subsubsection{Rechenregeln für Mengen}
+\begin{tabular}{l|l|l}
+  \textbf{Name/Stichwort:} & \textbf{Regel/Gesetz Durchschnitt} & \textbf{Vereinigung}\\
+  \hline
+  Idempotenzgesetze & \(A \cap A = A \) & \( A \cup A = A \) \\
+  \hline
+  Kommutativgesetze & \(A \cap B = B \cap A \) & \(A \cup B = B \cup A \) \\
+  \hline
+  Identitätsgesetze & \(A \cap G = A \) & \(A \cup \emptyset = A \) \\
+  & \(A \cap \emptyset = \emptyset\) \\
+  \hline
+  Assoziativgesetze & \((A \cap B) \cap C = A \cap (B \cap C) \) & \((A \cup B) \cup C = A \cup (B \cup C) \) \\
+  \hline
+  Absorptionsgesetze & \(A \cap (A \cup B) = A \) & \(A \cup (A \cap B) = A \) \\
+  \hline
+  Distributivgesetze & \(A \cap (B \cup C) = (A \cap B) \cup (A \cap C) \) & \(A \cup (B \cap C) = (A \cup B) \cap (A \cup C) \) \\
+  \hline
+  De Morgan Gesetze & \((A \cap B)^{c} = A^{c} \cup B^{c} \) & \((A \cup B)^{c} = A^{c} \cap B^{c} \) \\
+  \hline
+  Komplementgesetze & \(A \cap A^{c} = \emptyset \) & \(A \cup A^{c} = G \) \\
+  & \((A^{c})^{c} = A \) \\
+  & \(G^{c} = \emptyset \) \\
+  & \(\emptyset^{c} = G \) \\
+  \hline
+  Teilmengenbeziehungen & \(A \subseteq B \Longrightarrow (A \cap B = A)\) & \(A \subseteq B \Longrightarrow (A \cup B = B) \) \\
+  & \((A \subseteq B) \land (B \subseteq C) \Longrightarrow (A \subseteq C) \) \\
+  \hline
+\end{tabular}
+
+
+
 
 
 
