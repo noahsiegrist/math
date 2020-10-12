@@ -382,7 +382,7 @@ Diese Qantoren können nun mit den anderen Verknüpfungen kombiniert werden, wob
 \subsection{Grundbegriffe}
 
 \subsubsection{Diskursuniversum}
-Objekte / Gegenstände / Ideen, worüber wir sprechen wollen (z.B. mit Logik) -> dies bietet die Mengenlehre
+Hier werden Objekte, Gegenstände oder Ideen angesprochen über welche wir sprechen wollen (z.B. mittels Logik). Dies wird uns durch die Mengenlehre geboten.
 
 \subsubsection{Menge}
 Eine Menge besteht aus Elementen (Objekten), diese haben idr eine Gemeinsamkeit und sind deswegen zu einer Menge zusammengeschlossen.
@@ -433,7 +433,7 @@ M := \{a,b,c\} hätte z.B. die Kardinalität 3.
 
 \subsubsection{Potenzmenge}
 Die Potenzmenge entspricht aller möglichen Teilmengen einer Menge. \\
-Sie wird mit \( P(C) \) dargestellt und auch "System über Menge C" genannt.
+Sie wird mit \( P(C) \) dargestellt und auch System über Menge C genannt.
 
 Sei C := \{1,2,4\}, dann ist \( P(C) \) := \{$\emptyset$,  \{1\}, \{2\}, \{4\}, \{1,2\}, \{1,4\}, \{2,4\}, C\}
 
@@ -449,19 +449,46 @@ Die Grundmenge $G$ versteht sich als die Menge unter allen Mengen, in welcher si
 \textbf{Beispiel:} \\
 Gewollt sind alle reellen Zahlen \{$x \in \mathbb{R}$\}, hier würde man die Grundmenge folgendermassen definieren: $G := \mathbb{R}$
 
+\subsubsection{Mengenzeichen - Operationen}
+Es gibt diverse Operationen, die in der Mengenlehre verwendet werden. Folgende werden wir behandeln:
+\begin{itemize}
+  \item Vereinigung $\cup$ - Mengenkonjunktion
+  \item Durchschnitt $\cap$ - Mengendisjunktion
+  \item Differenz $\setminus$ - diese ist in 3 Sektoren eingeteilt
+  \item Symmetrische Differenz $\Delta$
+  \item Komplement $A^{c}$
+  \item Kartesisches Produkt $\times$
+\end{itemize}
 
+\subsubsection{Vereinigung $\cup$ - Mengenkonjunktion}
+Dies bezeichnet schlicht die Vereinigung von Mengen. \\
+$A \cup B$ := \{$x \in G$ : $x \in A \lor x \in B$\} \\
+\textbf{Beispiel:} $A$ := \{x, y, z\}, $B$ := \{v, w\}, $A \cup B$ := \{v, w, x, y, z\}
 
+\subsubsection{Durchschnitt $\cap$ - Mengendisjunktion}
+Hier wird auf den Durchschnitt oder die Gemeinsamkeit zweier Mengen abgezielt. \\
+$A \cap B$ := \{$x \in G$ : $x \in A \land x \in B$\} \\
+\textbf{Beispiel:} $A$ := \{\textcolor{red}{e}, \textcolor{red}{x}, y, z\}, $B$ := \{a, b, \textcolor{red}{e}, \textcolor{red}{x}\}, $A \cap B$ := \{\textcolor{red}{e}, \textcolor{red}{x}\}
 
+\subsubsection{Differenz $\setminus$ - diese ist in 3 Sektoren eingeteilt}
+Bei der Differenz wird aus der ersten Menge das entnommen, was in der Zweiten auch vorhanden ist. \\
+$A \setminus B$ := \{$x \in G$ : $(x \in A \land x \not\in B)$\}
+\textbf{Beispiel:} $A$ := \{b, o, u, m, \textcolor{red}{a, t}\}, $B$ := \{\textcolor{red}{a, t}, x, y, z\}, $A \setminus B$ := \{b, o, u, m\}
 
+\subsubsection{Symmetrische Differenz $\Delta$}
+Bei der symmetrischen Differenz werden die Gemeinsamkeiten beider Mengen ausgeschlossen.
+$A \Delta B$ := \{$(x \in A \land x \not\in B) \land (x \in B \land x \not\in A)$\} \\
+\textbf{Beispiel:} $A$ := \{b, o, v, w, z\}, $B$ := \{v, w, z, u, m\}, $A \Delta B$ := \{b, o, u, m\}
 
+\subsubsection{Komplement $A^{c}$}
+%kurze Beschreibung fehlt
+$A^{c} \equiv \vec{A}$ := \{$x \in G$ : $x \not\in A$\} = $G \setminus A$ \\
+\textbf{Beispiel:} $G$ := $\mathbb{N}$, $A$ := \{0, 1, 2, 3\}, $A^{c} \equiv \vec{A}$ := \{4, 5, 6, 7, ..\}
 
-
-
-
-
-
-
-
+\subsubsection{Kartesisches Produkt $\times$}
+Dies bezeichnet eine Menge geordneter Paare: \\
+$A \times B$ := \{$(x, y) : x \in A \land y \in B$\} \\
+\textbf{Beispiel:} $A \times B$ := \{$(2,8), (2,16), (4,8), (4,16)$\}
 
 
 
@@ -480,7 +507,7 @@ B := \{BMW, Audi, Ferrari\} ist eine Menge von Automarken \\
 \\
 \textbf{Beschreibende Form} \\
 %REWORK
-%$A := \{$n : $n \in \mathbb {N } \land $n < 10$ \land \($\exists k$ \in \mathbb{N} : $n = 2k -1\)$\} \\
+%$A$ := \{$n : n \in \mathbb {N} \land n < 10 \land \(\exists k \in \mathbb{N} : n = 2k -1\)$\} \\
 %Hier würden alle ungeraden natürlichen Zahlen kleiner als 10 in die Menge A aufgenommen werden \\
 \textbf{Venn Diagramme} \\
 ...
