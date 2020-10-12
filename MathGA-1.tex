@@ -247,7 +247,7 @@ Bedeutungslehre. Zwei aussagenlogische Formeln sind semantisch gleich oder äqui
 Daher, dass gewisse Ausdrücke Semantisch äquivalent sein können ergeben sich folgende Rechengesetze:
 
 \begin{tabular}{l|cc}
-  Name & Gesetz \\
+  \textbf{Name} & \textbf{Gesetz} \\
   \hline
   Idempotenzgesetz & \(A \land A \equiv A  \) & \(A \lor A \equiv A  \)\\
   \hline
@@ -360,13 +360,24 @@ Folgende Qantoren ergeben die (Prädikaten) Aussagen, welche wiederum entweder w
   \item $\exists! x : P(x)$ Für \textbf{genau} ein x ist $P(x)$ wahr.
 \end{itemize}
 
-Diese könne natürlich auch verneint werden:
-\begin{itemize}
-  \item $\neg \forall x : P(x))$ Für \textbf{alle} x ist $P(x)$ wahr.
-  \item $\exists x : P(x)$ Für \textbf{mindestens} ein x ist $P(x)$ wahr.
-  \item $\exists! x : P(x)$ Für \textbf{genau} ein x ist $P(x)$ wahr.
-\end{itemize}
+Es gibt ein paar Gesetze zu beachten:
 
+\begin{tabular}{l|ccc}
+  \textbf{Name} & \textbf{Gesetz} \\
+  \hline
+  Negationsgesetzte & \(\neg ( \forall x : P(x)) \) & $\iff$ & $\exists x : \neg P(x) $\\
+   & \(\neg ( \forall x : \neg P(x))\) & $ \iff $ & $\exists x :  P(x)$  \\
+   & \(\neg ( \exists x :  P(x))\) & $\iff$ & \(\forall x : \neg P(x)\)  \\   
+   & \(\neg ( \exists x : \neg P(x))\) & $ \iff $ & \(\forall x :  P(x)\)  \\
+  \hline
+  Vertauschbarkeitssatze & \( \forall x,y : P(x, y)) \) & $\iff$ & $\forall y,x : P(x, y)) $\\
+   & \( \exists x,y : P(x, y)) \) & $\iff$ & $\exists y,x : P(x, y)) $\\
+   & \( \exists x \forall y : P(x, y)) \) & $\implies$ & $\forall x \exists y : P(x, y))  $\\  
+   \hline
+   & \( \forall x  : P(x)) \) & $\implies$ & $\exists x : P(x))  $\\
+   & \( \exists x : P(x)) \) & $\implies$ & $\exists! x : P(x))  $\\
+   & \( \forall x : P(x)) \) & $\implies$ & $\exists! x : P(x))  $\\
+  \end{tabular}
 
 Diese Qantoren können nun mit den anderen Verknüpfungen kombiniert werden, wobei die Qantoren am \textbf{stärksten} binden.
 \subsubsection{Beispiele}
