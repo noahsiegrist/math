@@ -9,6 +9,8 @@
 \usepackage{index} %custom indexing%
 \usepackage[singlespacing]{setspace} %set spacing property%
 \usepackage{tabularx} %format tabular%
+%\usepackage{bbold}
+\usepackage{makecell}
 
 \usepackage[utf8]{inputenc} %Umlaute etc.%
 \usepackage[ngerman]{babel} %German charset%
@@ -333,6 +335,80 @@ Ein Prädikat kann auch mehre Variablen enthalten, oder auch keine, was dann ein
 
 
 \subsubsection*{Beispiel}
+...
+
+\newpage
+\section{Mengenlehre}
+
+\subsection{Grundbegriffe}
+
+\subsubsection{Diskursuniversum}
+Objekte / Gegenstände / Ideen, worüber wir sprechen wollen (z.B. mit Logik) -> dies bietet die Mengenlehre
+
+\subsubsection{Menge}
+Eine Menge besteht aus Elementen (Objekten), diese haben idr eine Gemeinsamkeit und sind deswegen zu einer Menge zusammengeschlossen.
+
+Es gibt ausserdem noch die Leere Menge:  $\emptyset$ oder \{\} . Diese enthält keine Elemente.
+
+Ebenso zu erwähnen gilt es, sofern in Mengen das gleiche Element vorkommt gilt dies nicht mehr als Menge. Die Reihenfolge der Elemente innerhalb einer Menge ist irrelevant.
+
+Weiter gilt noch das Gesetz der Gleichheit der Menge. Dies ist, sofern sämtliche Elemente einer Menge in der anderen vorhanden sind und umgekehrt. \\
+$A = B$ :  $\Leftrightarrow$  $\forall x$ : \((x \in  A \Leftrightarrow x \in  B\))
+
+\subsubsection{Schreibformen der Menge}
+Es gibt insgesamt 3 Schreibformen für die Menge:
+\begin{itemize}
+  \item Aufzählende Form (Elementaufzählung)
+  \item Beschreibende Form (Prädikatenschreibweise: \( P(x) \) )
+  \item Venn Diagramme
+\end{itemize}
+
+Nachfolgend nun diese genauer erklärt:
+
+\subsubsection{Aufzählende Form}
+M := \{a,b,c\} ; eine Menge mit den Elementen a, b und c
+
+\subsubsection{Prädikatenform / beschreibende Form \( P(x) \)}
+Hier die Schreibweise für die Menge A aller Elemente x mit der Eigenschaft \( P(x) \) \\
+$A := \{$x : \( P(x) \)\} \\
+
+\subsubsection{Venn Diagramme}
+Ausserdem gibt es noch Venn Diagramme zur graphischen Darstellung. Mehr dazu in den Beispielen.
+
+\subsubsection{Zahlenmengen}
+Es gibt verschiedene bekannte Zahlenmengen. Diese wären: \\
+$\mathbb{N}$ : natürliche Zahlen \\
+$\mathbb{Z}$ : ganze Zahlen \\
+$\mathbb{Q}$ : rationale Zahlen (u.a. Brüche) \\
+$\mathbb{R}$ : reelle Zahlen (periodisch oder nicht periodisch, u.a. Wurzeln oder Pi)
+
+\subsubsection{Teilmengen}
+Wir unterscheiden \textbf{echte Teilmengen} von \textbf{unechten Teilmengen}. \\
+\textbf{Echte Teilmengen} werden mit $\subset$ angegeben. Hierbei ist die gemeinte Menge in der jeweils anderen enthalten (ohne \textnormal{sämtliche} Elemente der anderen Menge, dies \textnormal{wäre} dann die \textbf{unechte Menge}). Unechte Mengen (identische Mengen) werden mit $\subseteq$ angegeben.
+
+Noch zu erwähnen ist, dass die Leere Menge $\emptyset$ teil einer jeden Teilmenge ist und die Menge selber jeweils auch ihre eigene Teilmenge ist (Menge A ist "unechte" Teilmenge von Menge A := A $A \subseteq A$).
+
+\subsubsection{Mächtigkeit / Kardinalität}
+Die Mächtigkeit wird durch die Anzahl der Elemente in einer Menge definiert. \\
+M := \{a,b,c\} hätte z.B. die Kardinalität 3.
+
+\subsubsection{Potenzmenge}
+Die Potenzmenge entspricht aller möglichen Teilmengen einer Menge. \\
+Sie wird mit \( P(C) \) dargestellt und auch "System über Menge C" genannt.
+
+Sei C := \{1,2,4\}, dann ist \( P(C) \) := \{$\emptyset$,  \{1\}, \{2\}, \{4\}, \{1,2\}, \{1,4\}, \{2,4\}, C\}
+
+\( S(C) \) bezeichnet ein Mengensystem über C \\
+Beispiel: S := \{$\emptyset$,  \{2\}, \{4\}, \{1,2\}\}
+
+Die Mächtigkeit der Potenzmenge wird folgendermassen angegeben: \\
+|\( P(C) \)| := $2^{|C|}$ ; also 2 hoch der Anzahl Elemente in der Menge, hier: $2^{3}$ = 8, korrekt.
+
+\subsubsection{Grundmenge}
+Die Grundmenge $G$ versteht sich als die Menge unter allen Mengen, in welcher sich alle Mengen befinden. Diese wird oft als Viereck gezeichnet.
+
+\textbf{Beispiel:} \\
+Gewollt sind alle reellen Zahlen \{$x \in \mathbb{R}$\}, hier würde man die Grundmenge folgendermassen definieren: $G := \mathbb{R}$
 
 
 
@@ -342,6 +418,33 @@ Ein Prädikat kann auch mehre Variablen enthalten, oder auch keine, was dann ein
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection*{Beispiele zur Mengenlehre}
+$x \in $ M : x ist ein Element von der Menge M \\
+\\
+\textbf{Aufzählende Form:} \\
+A := \{Biene, Wespe, Marienkäfer\} ist eine Menge von Insekten \\
+B := \{BMW, Audi, Ferrari\} ist eine Menge von Automarken \\
+\\
+\textbf{Beschreibende Form} \\
+%REWORK
+%$A := \{$n : $n \in \mathbb {N } \land $n < 10$ \land \($\exists k$ \in \mathbb{N} : $n = 2k -1\)$\} \\
+%Hier würden alle ungeraden natürlichen Zahlen kleiner als 10 in die Menge A aufgenommen werden \\
+\textbf{Venn Diagramme} \\
+...
 
 
 \end{document}
