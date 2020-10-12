@@ -331,11 +331,50 @@ Wir haben eine Menge an Geometrischen formen und wollen herausfinden welche davo
 
 Unser Prädikat \( P(x) \) wird erst zur Aussage, wenn für x ein Objekt eingesetzt wird. Solange kein Objekt eingesetzt ist, kann das Prädikat auch nicht auf wahr oder falsch definiert werden und ist deshalb auch noch keine Aussage. Wenn nun ein Recheck für x eingesetzt wird, können wir feststellen, dass die Aussage \textit{"Rechteck ist rund"} falsch ist.
 
-Ein Prädikat kann auch mehre Variablen enthalten, oder auch keine, was dann eine Aussage währe ().
+Ein Prädikat kann auch mehre Variablen enthalten, das ist dann ein n-stelliges-Prädikat. \( n = 0 \) wäre dann eine einfache Aussage.
 
 
 \subsubsection*{Beispiel}
-...
+\begin{itemize}
+  \item \(P(a) = \)  a ist durch 2 teilbar.
+ 
+  \(P(2) \) ist wahr und \(P(3)\) falsch.
+  \item \(Q(x, y, z) = \) x ist grösser als y und z.
+ 
+  \(Q(3, 2, 2) \) ist wahr und \(Q(3, 2, 3)\) falsch.
+  \item \(Z() = \) Ein Prädikat ohne variabel ist eine Aussage.
+ 
+  \(Z() \) ist wahr.
+\end{itemize}
+
+Wie im Beispiel gerade gut zu sehen ist, wird das Prädikat zur Aussage sobald die Variablen durch effektive Werte ersetzt werden. Dies nennen wir dann eine \textbf{Belegung}
+\newpage
+\subsubsection{Qantoren}
+Wir können nun, mithilfe der folgenden drei Qantoren, Logische Aussagen über die Prädikate machen.
+
+
+Folgende Qantoren ergeben die (Prädikaten) Aussagen, welche wiederum entweder wahr order falsch sind.
+\begin{itemize}
+  \item $\forall x : P(x)$ Für \textbf{alle} x ist $P(x)$ wahr.
+  \item $\exists x : P(x)$ Für \textbf{mindestens} ein x ist $P(x)$ wahr.
+  \item $\exists! x : P(x)$ Für \textbf{genau} ein x ist $P(x)$ wahr.
+\end{itemize}
+
+Diese könne natürlich auch verneint werden:
+\begin{itemize}
+  \item $\neg \forall x : P(x))$ Für \textbf{alle} x ist $P(x)$ wahr.
+  \item $\exists x : P(x)$ Für \textbf{mindestens} ein x ist $P(x)$ wahr.
+  \item $\exists! x : P(x)$ Für \textbf{genau} ein x ist $P(x)$ wahr.
+\end{itemize}
+
+
+Diese Qantoren können nun mit den anderen Verknüpfungen kombiniert werden, wobei die Qantoren am \textbf{stärksten} binden.
+\subsubsection{Beispiele}
+\begin{itemize}
+  \item $\exists x : P(x)$ Für \textbf{mindestens} ein x ist $P(x)$ wahr.
+  \item $\exists x : P(x)$ Für \textbf{mindestens} ein x ist $P(x)$ wahr.
+\end{itemize}
+
 
 \newpage
 \section{Mengenlehre}
