@@ -373,19 +373,37 @@ Es gibt ein paar Gesetze zu beachten:
   Vertauschbarkeitssatze & \( \forall x,y : P(x, y)) \) & $\iff$ & $\forall y,x : P(x, y)) $\\
    & \( \exists x,y : P(x, y)) \) & $\iff$ & $\exists y,x : P(x, y)) $\\
    & \( \exists x \forall y : P(x, y)) \) & $\implies$ & $\forall x \exists y : P(x, y))  $\\  
-   \hline
-   & \( \forall x  : P(x)) \) & $\implies$ & $\exists x : P(x))  $\\
-   & \( \exists x : P(x)) \) & $\implies$ & $\exists! x : P(x))  $\\
-   & \( \forall x : P(x)) \) & $\implies$ & $\exists! x : P(x))  $\\
   \end{tabular}
 
 Diese Qantoren können nun mit den anderen Verknüpfungen kombiniert werden, wobei die Qantoren am \textbf{stärksten} binden.
 \subsubsection{Beispiele}
-\begin{itemize}
-  \item $\exists x : P(x)$ Für \textbf{mindestens} ein x ist $P(x)$ wahr.
-  \item $\exists x : P(x)$ Für \textbf{mindestens} ein x ist $P(x)$ wahr.
-\end{itemize}
+"Nicht alle StarWars fans finden die letzte StarWars Reihe gut."
 
+Dabei ist das Prädikat $S(x) = $ "x findet die letzte StarWars Reihe gut."
+\begin{displaymath}
+  \neg (\forall x : S(x))
+\end{displaymath}
+Lässt sich aber mit dem ersten Verneninungssatz vereinfachen zu:
+\begin{displaymath}
+  \exists x : \neg S(x)
+\end{displaymath}
+
+
+"Es gilt nicht, dass alle Menschen x, die eine Maske y tragen nicht Covid-19 bekommen."
+
+$S(x, y) =$ "Mensch x trägt Maske y und hat Covid-19." 
+\begin{displaymath}
+  \neg ( \forall x \exists y  : \neg S(x, y))
+\end{displaymath}
+\begin{displaymath}
+  \exists x \neg (\exists y  :  \neg S(x, y))
+\end{displaymath}
+\begin{displaymath}
+  \exists x  \forall y  :  \neg (\neg S(x, y))
+\end{displaymath}
+\begin{displaymath}
+  \exists x  \forall y  :   S(x, y)
+\end{displaymath}
 
 \newpage
 \section{Mengenlehre}
