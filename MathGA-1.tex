@@ -506,19 +506,33 @@ $A \cap B$ := \{$x \in G | x \in A \land x \in B$\} \\
 $A$ := \{\textcolor{red}{e}, \textcolor{red}{x}, y, z\}, $B$ := \{a, b, \textcolor{red}{e}, \textcolor{red}{x}\}, $A \cap B$ := \{\textcolor{red}{e}, \textcolor{red}{x}\}
 
 $A \cap B$ := \{$x \in G | x \in A \land x \in B$\} \\
-$A$ := \{Harry Potter, Hermine Granger, Ron Weasley, Severus Snape\} := Dumbledore's Armee \\
-$B$ := \{Lucius Malfoy, Bellatrix Lestrange, Severus Snape\} := Todesser \\
+$A$ := \{Harry Potter, Hermine Granger, Ron Weasley, Severus Snape\} (:= Dumbledore's Armee) \\
+$B$ := \{Lucius Malfoy, Bellatrix Lestrange, Severus Snape\} (:= Todesser) \\
 $A \cap B$ := \{Severus Snape\}
 
-\subsubsection{Differenz $\setminus$ - diese ist in 3 Sektoren eingeteilt}
+\subsubsection{Differenz $\setminus$}
 Bei der Differenz wird aus der ersten Menge das entnommen, was in der Zweiten auch vorhanden ist. \\
-$A \setminus B$ := \{$x \in G | (x \in A \land x \not\in B)$\}
-\textbf{Beispiel:} $A$ := \{b, o, u, m, \textcolor{red}{a, t}\}, $B$ := \{\textcolor{red}{a, t}, x, y, z\}, $A \setminus B$ := \{b, o, u, m\}
+$A \setminus B$ := \{$x \in G | (x \in A \land x \not\in B)$\} \\
+\textbf{Beispiele:}\\ 
+$A$ := \{b, o, u, m, \textcolor{red}{a, t}\}, $B$ := \{\textcolor{red}{a, t}, x, y, z\} \\
+$A \setminus B$ := \{b, o, u, m\}
+
+$A \setminus B$ := \{$x \in G | (x \in A \land x \notin B)$\} \\
+$A$ (:= vermeintliche Hauptstadt) := \{Zürich, Stockholm, London, Sydney\} \\
+$B$ (:= offizielle Hauptstadt) := \{Canberra, Ottawa, Stockholm, London, Bern\} \\
+ $A \setminus B$ = \{Zürich, Sydney\}
 
 \subsubsection{Symmetrische Differenz $\Delta$}
 Bei der symmetrischen Differenz werden die Gemeinsamkeiten beider Mengen ausgeschlossen.
 $A \Delta B$ := \{$(x \in A \land x \not\in B) \land (x \in B \land x \not\in A)$\} \\
-\textbf{Beispiel:} $A$ := \{b, o, v, w, z\}, $B$ := \{v, w, z, u, m\}, $A \Delta B$ := \{b, o, u, m\}
+\textbf{Beispiele:} \\ 
+$A$ := \{b, o, v, w, z\}, $B$ := \{v, w, z, u, m\} \\
+$A \Delta B$ := \{b, o, u, m\}
+
+$A \Delta B$ :=\{$x \in G | (x \in A \land x \notin B) \lor (x \in B \land x \notin A)$\} \\
+$A$ (:= Coronagegner) := \{Marco Rima, Hans, Peter, Lisa\}, $B$ (:= Coronabefürworter) := \{Anneliese, Lisa, Robert\}, $A \Delta B$ := \{Marco Rima, Hans, Peter, Anneliese, Robert\} \\
+\\
+Anmerkung: Coronagegner sowie Coronabefürworter entspricht den Gruppierungen und wird zur Verständlichkeit dargestellt.
 
 \subsubsection{Komplement $A^{c}$}
 %kurze Beschreibung fehlt
@@ -595,7 +609,6 @@ $|\mathbb{Z}^{-}| = |\mathbb{Z}^{+}| = |\mathbb{Z}| = |\mathbb{N}_g| = |\mathbb{
 $\mathbb{R}$ ist überabzählbar unendlich.
 
 
-
 \subsubsection*{Beispiele zur Mengenlehre}
 $x \in $ M : x ist ein Element von der Menge M \\
 \\
@@ -644,4 +657,18 @@ Im zweiten Diagramm sieht man noch die Vereinfachung davon: \((A \cap C) \)\\
 \\
 Man sieht schön, wie ein Venn Diagramm aufgebaut ist. Dies gilt natürlich auch für alle anderen Operationen. \\
 
+\textbf{Kartesisches Produkt}
+\begin{table}[htb]
+\centering
+\begin{tabular}{llllll}
+                       &                        &       & A     & x                          & B \\ \cline{2-5}
+\multicolumn{1}{l|}{B} & \multicolumn{1}{l|}{3} & (a,3) & (b,3) & \multicolumn{1}{l|}{(c,3)} &   \\
+\multicolumn{1}{l|}{}  & \multicolumn{1}{l|}{2} & (a,2) & (b,2) & \multicolumn{1}{l|}{(c,2)} &   \\
+\multicolumn{1}{l|}{}  & \multicolumn{1}{l|}{1} & (a,1) & (b,1) & \multicolumn{1}{l|}{(c,1)} &   \\ \cline{2-5}
+                       & \multicolumn{1}{l|}{}  & a     & b     & \multicolumn{1}{l|}{c}     & A \\ \cline{3-5}
+\end{tabular}
+\end{table}
+\\
+Hier sieht man, wie ein kartesisches Produkt aufgebaut ist. Dabei wird \textbf{jedes Element} (der Menge A) \textbf{mit jedem Element} der anderen Menge (B) \textbf{gekreuzt}.
+$A^c \equiv \overline{\rm A}$
 \end{document}
