@@ -9,8 +9,8 @@
 \usepackage{index} %custom indexing%
 \usepackage[singlespacing]{setspace} %set spacing property%
 \usepackage{tabularx} %format tabular%
-%\usepackage{bbold}
 \usepackage{makecell}
+\usepackage{tikz}
 
 \usepackage[utf8]{inputenc} %Umlaute etc.%
 \usepackage[ngerman]{babel} %German charset%
@@ -349,11 +349,11 @@ Ein Prädikat kann auch mehre Variablen enthalten, das ist dann ein n-stelliges-
 
 Wie im Beispiel gerade gut zu sehen ist, wird das Prädikat zur Aussage sobald die Variablen durch effektive Werte ersetzt werden. Dies nennen wir dann eine \textbf{Belegung}
 \newpage
-\subsubsection{Qantoren}
-Wir können nun, mithilfe der folgenden drei Qantoren, Logische Aussagen über die Prädikate machen.
+\subsubsection{Quantoren}
+Wir können nun, mithilfe der folgenden drei Quantoren, Logische Aussagen über die Prädikate machen.
 
 
-Folgende Qantoren ergeben die (Prädikaten) Aussagen, welche wiederum entweder wahr order falsch sind.
+Folgende Quantoren ergeben die (Prädikaten) Aussagen, welche wiederum entweder wahr oder falsch sind.
 \begin{itemize}
   \item $\forall x : P(x)$ Für \textbf{alle} x ist $P(x)$ wahr.
   \item $\exists x : P(x)$ Für \textbf{mindestens} ein x ist $P(x)$ wahr.
@@ -375,7 +375,7 @@ Es gibt ein paar Gesetze zu beachten:
    & \( \exists x \forall y : P(x, y)) \) & $\implies$ & $\forall x \exists y : P(x, y))  $\\  
   \end{tabular}
 
-Diese Qantoren können nun mit den anderen Verknüpfungen kombiniert werden, wobei die Qantoren am \textbf{stärksten} binden.
+Diese Quantoren können nun mit den anderen Verknüpfungen kombiniert werden, wobei die Quantoren am \textbf{stärksten} binden.
 \subsubsection{Beispiele}
 "Nicht alle StarWars fans finden die letzte StarWars Reihe gut."
 
@@ -450,7 +450,7 @@ $\mathbb{Z}$ : ganze Zahlen \\
 $\mathbb{Q}$ : rationale Zahlen (u.a. Brüche) \\
 $\mathbb{R}$ : reelle Zahlen (periodisch oder nicht periodisch, u.a. Wurzeln oder Pi)
 
-\subsubsection{Teilmengen}
+\subsection{Teilmengen}
 Wir unterscheiden \textbf{echte Teilmengen} von \textbf{unechten Teilmengen}. \\
 \textbf{Echte Teilmengen} werden mit $\subset$ angegeben. Hierbei ist die gemeinte Menge in der jeweils anderen enthalten (ohne \textnormal{sämtliche} Elemente der anderen Menge, dies \textnormal{wäre} dann die \textbf{unechte Menge}). Unechte Mengen (identische Mengen) werden mit $\subseteq$ angegeben.
 
@@ -472,18 +472,18 @@ Beispiel: S := \{$\emptyset$,  \{2\}, \{4\}, \{1,2\}\}
 Die Mächtigkeit der Potenzmenge wird folgendermassen angegeben: \\
 |\( P(C) \)| := $2^{|C|}$ ; also 2 hoch der Anzahl Elemente in der Menge, hier: $2^{3}$ = 8, korrekt.
 
-\subsubsection{Grundmenge}
+\subsection{Grundmenge}
 Die Grundmenge $G$ versteht sich als die Menge unter allen Mengen, in welcher sich alle Mengen befinden. Diese wird oft als Viereck gezeichnet.
 
 \textbf{Beispiel:} \\
 Gewollt sind alle reellen Zahlen \{$x \in \mathbb{R}$\}, hier würde man die Grundmenge folgendermassen definieren: $G := \mathbb{R}$
 
-\subsubsection{Mengenzeichen - Operationen}
+\subsection{Mengenzeichen - Operationen}
 Es gibt diverse Operationen, die in der Mengenlehre verwendet werden. Folgende werden wir behandeln:
 \begin{itemize}
   \item Vereinigung $\cup$ - Mengenkonjunktion
   \item Durchschnitt $\cap$ - Mengendisjunktion
-  \item Differenz $\setminus$ - diese ist in 3 Sektoren eingeteilt
+  \item Differenz $\setminus$
   \item Symmetrische Differenz $\Delta$
   \item Komplement $A^{c}$
   \item Kartesisches Produkt $\times$
@@ -519,11 +519,69 @@ Dies bezeichnet eine Menge geordneter Paare: \\
 $A \times B$ := \{$(x, y) : x \in A \land y \in B$\} \\
 \textbf{Beispiel:} $A \times B$ := \{$(2,8), (2,16), (4,8), (4,16)$\}
 
+\subsection{Gesetze der Mengenalgebra}
+Generell ist zusätzlich nur die Elementeoperation $\in$ notwendig, alle weiteren Operatoren können von der Logik übernommen werden. \\
+Der Grund für die Mengenalgebra ist, dass möglichst einfach die Gleichheit von Mengen getestet werden kann.
 
+\subsubsection{Bindungsstärken (Prioritäten)}
+\begin{tabular}{l|l|l}
+  Bindungsstärke & (Aussagen- und Prädikaten-) Logik & Mengentheorie \\
+  \hline
+  Höchste & \textit{Klammern} & \textit{Klammern} \\
+   & \( \forall, \exists, \exists! \) & \( ^{c}  \phantom{A}(bzw. \overline{\phantom{A}})\) \\
+   & \(\lnot\) & \(\bigcup, \bigcap, \Pi\)  \phantom{abcdef}(D. h. $\bigcap\limits_{k=1}^n,\bigcup\limits_{k=1}^n,\prod\limits_{k=1}^{n}$)\\
+  & \(\in,\not\in,\land,\lor,\textit{XOR},\subseteq,\subset\,=,\neq\) & \(\cup,\cap,\Delta,\setminus,\times\) \\
+  Niedrigste & \(\Longrightarrow,\Longleftrightarrow\) \\
+  \hline
+\end{tabular}
 
+\subsubsection{Rechenregeln für Mengen}
+\begin{tabular}{l|l|l}
+  \textbf{Name/Stichwort:} & \textbf{Regel/Gesetz Durchschnitt} & \textbf{Vereinigung}\\
+  \hline
+  Idempotenzgesetze & \(A \cap A = A \) & \( A \cup A = A \) \\
+  \hline
+  Kommutativgesetze & \(A \cap B = B \cap A \) & \(A \cup B = B \cup A \) \\
+  \hline
+  Identitätsgesetze & \(A \cap G = A \) & \(A \cup \emptyset = A \) \\
+  & \(A \cap \emptyset = \emptyset\) \\
+  \hline
+  Assoziativgesetze & \((A \cap B) \cap C = A \cap (B \cap C) \) & \((A \cup B) \cup C = A \cup (B \cup C) \) \\
+  \hline
+  Absorptionsgesetze & \(A \cap (A \cup B) = A \) & \(A \cup (A \cap B) = A \) \\
+  \hline
+  Distributivgesetze & \(A \cap (B \cup C) = (A \cap B) \cup (A \cap C) \) & \(A \cup (B \cap C) = (A \cup B) \cap (A \cup C) \) \\
+  \hline
+  De Morgan Gesetze & \((A \cap B)^{c} = A^{c} \cup B^{c} \) & \((A \cup B)^{c} = A^{c} \cap B^{c} \) \\
+  \hline
+  Komplementgesetze & \(A \cap A^{c} = \emptyset \) & \(A \cup A^{c} = G \) \\
+  & \((A^{c})^{c} = A \) \\
+  & \(G^{c} = \emptyset \) \\
+  & \(\emptyset^{c} = G \) \\
+  \hline
+  Teilmengenbeziehungen & \(A \subseteq B \Longrightarrow (A \cap B = A)\) & \(A \subseteq B \Longrightarrow (A \cup B = B) \) \\
+  & \((A \subseteq B) \land (B \subseteq C) \Longrightarrow (A \subseteq C) \) \\
+  \hline
+\end{tabular}
 
+\subsubsection{Partition einer Menge}
+Bei einer Partition einer Menge sprechen wir davon, das wir alle Elemente einer Menge in einzelne Gruppen aufteilen, welche schliesslich die so genannten Partitionen bilden.
 
+\textbf{Beispiel:} Wir haben die Menge $\mathbb{N}_8$ (:= \{0,1,2..,8\}). \\
+Ein mögliches Mengensystem wäre nun: \\
+$S$ := \{\{0,2,4\},\{1,3,7\},\{5,8\},\{6\}\}
 
+Zu erwähnen ist, dass die kombinatorischen Möglichkeiten auf der Bell'schen Zahl basieren. Diese wird schnell extrem gross, so dass bei wenigen Elementen in einer Menge bereits eine riesige Möglichkeit an Kombinationen herrscht.
+
+\subsubsection{Unendlichkeit einer Menge}
+Vorerst ist zu sagen, dass es verschiedene Mengen gibt, und zwar \textbf{endliche} oder \textbf{unendliche} Mengen.
+
+Anhand der Kardinalität der Mengen sieht man, ob es jeweils eine Paarung eines Elements jeder Menge gibt. Dadurch lässt sich definieren, ob eine Menge \textbf{unendlich oder endlich} ist. Ausserdem sprechen wir hier von abzählbar unendlich, was soviel heisst wie gewisse Mengen (z.B. Zahlenmengen wie $\mathbb{N}$ oder $\mathbb{Z}$ sind abzählbar unendlich). Wiederum die reellen Zahlen $\mathbb{R}$ sind jedoch nicht abzählbar unendlich (periodische Zahlen/Wurzeln etc.) und nennt sich \textbf{überabzählbar unendlich}.
+
+\textbf{Beispiele und Definition:} \\
+$|\mathbb{Z}^{-}| = |\mathbb{Z}^{+}| = |\mathbb{Z}| = |\mathbb{N}_g| = |\mathbb{N}_u| = |\mathbb{Q}| = |\mathbb{N}|$
+
+$\mathbb{R}$ ist überabzählbar unendlich.
 
 
 
@@ -535,11 +593,44 @@ A := \{Biene, Wespe, Marienkäfer\} ist eine Menge von Insekten \\
 B := \{BMW, Audi, Ferrari\} ist eine Menge von Automarken \\
 \\
 \textbf{Beschreibende Form} \\
-%REWORK
-%$A$ := \{$n : n \in \mathbb {N} \land n < 10 \land \(\exists k \in \mathbb{N} : n = 2k -1\)$\} \\
-%Hier würden alle ungeraden natürlichen Zahlen kleiner als 10 in die Menge A aufgenommen werden \\
-\textbf{Venn Diagramme} \\
-...
+Hier werden alle \textbf{ungeraden natürlichen Zahlen kleiner als 10} in die Menge A aufgenommen. \\
+\{\(n : n \in \mathbb{N} \land n < 10 \land (\exists k \in \mathbb{N} : n = 2k -1)\)\} \\
 
+\textbf{Venn Diagramme} \\
+\\
+Hier dargestellt als Diagramm die Formel der 3 Mengen \(A, B, C\): \((A \cap B) \cup (A \cap C) \cup (B \cap C)\) \\
+Im zweiten Diagramm sieht man noch die Vereinfachung davon: \((A \cap C) \)\\
+\\
+\def\firstcircle{(90:1.25cm) circle (1.5cm)}
+  \def\secondcircle{(210:1.25cm) circle (1.5cm)}
+  \def\thirdcircle{(330:1.25cm) circle (1.5cm)}
+    \begin{tikzpicture}
+      \begin{scope}
+    \clip \secondcircle;
+    \fill[cyan] \thirdcircle;
+      \end{scope}
+      \begin{scope}
+    \clip \firstcircle;
+    \fill[cyan] \thirdcircle;
+      \end{scope}
+      \begin{scope}
+    \clip \firstcircle;
+    \fill[cyan] \secondcircle;
+      \end{scope}
+      \draw \firstcircle node[text=black,above] {$A$};
+      \draw \secondcircle node [text=black,below left] {$B$};
+      \draw \thirdcircle node [text=black,below right] {$C$};
+    \end{tikzpicture}
+    \begin{tikzpicture}
+      \begin{scope}
+    \clip \firstcircle;
+    \fill[cyan] \thirdcircle;
+      \end{scope}
+      \draw \firstcircle node[text=black,above] {$A$};
+      \draw \secondcircle node [text=black,below left] {$B$};
+      \draw \thirdcircle node [text=black,below right] {$C$};
+    \end{tikzpicture}
+\\
+Man sieht schön, wie ein Venn Diagramm aufgebaut ist. Dies gilt natürlich auch für alle anderen Operationen. \\
 
 \end{document}
