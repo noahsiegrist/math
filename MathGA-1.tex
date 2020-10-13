@@ -53,8 +53,9 @@
 \setcounter{page}{1}
 \pagestyle{fancy}
 \fancyhf{} %clear footers style%
-\fancyhead[LE,RO]{\nouppercase{\leftmark}}
-\fancyfoot[LE,RO]{\centering{\thepage}}
+\fancyhead[RO]{\nouppercase{\leftmark}}
+\lhead{Mariel Alaba, Jan Meier, Noah Siegrist}
+\fancyfoot[LE,RO]{Seite \centering{\thepage} | Mathe GA-1}
 
 \newpage
 
@@ -66,7 +67,7 @@ Die Logik dient dazu komplexe Probleme analytisch zu Lösen. Sie bricht die Spra
 
 \subsubsection{Definition}
 
-Eine (logische) Aussage kann immer als \textbf{wahr (w)} order \textbf{falsch (f)} identifiziert werden. Wenn die Aussage nicht \textbf{eindeutig} mit w oder f beantwortet werden kann, so ist die Aussage nicht logisch.
+Eine (logische) Aussage kann immer als \textbf{wahr (w)} order \textbf{falsch (f)} identifiziert werden. Wenn die Aussage nicht \textbf{eindeutig} mit w oder f beantwortet werden kann ist diese Aussage keine logische Aussage.
 
 \setlist{nolistsep}
 \begin{itemize}
@@ -80,7 +81,7 @@ Logische Aussagen:
 \begin{itemize}
   \item Feuer gibt wärme ab. (w)
   \item Feuer kühlt. (f)
-  \item Feuer ist schön. (subjektive aber bestimmbar.)
+  \item Feuer ist schön. (subjektiv aber bestimmbar)
   \item Wenn das Feuer brennt, trocknen die Kleider schneller. (w)
 \end{itemize}
 
@@ -93,10 +94,10 @@ Keine Logische Aussagen:
 \end{itemize}
 \newpage
 \subsection{Aussagenlogische Verknüpfungen}
-Logische Aussagen können verknüpft werden mittels Aussagenlogische Verknüpfungen oder auch “Konnektoren”, “Junktoren” oder “Operatoren” gennant. Diese Verknüpfungen können jeweils mit \textbf{Wahrheitstabellen} definiert werden.
+Logische Aussagen können verknüpft werden mittels aussagenlogischer Verknüpfungen oder auch “Konnektoren”, “Junktoren” oder “Operatoren” gennant. Diese Verknüpfungen können jeweils mit \textbf{Wahrheitstabellen} definiert werden.
 
 \subsubsection{Negation (nicht)}
-Die negation ist keine Verknüpfung sondern invertiert eine Logische Aussage. Sie bindet am stärksten und bildet somit auch ein Literal. 
+Die Negation ist keine Verknüpfung sondern invertiert eine logische Aussage. Sie bindet am stärksten und bildet somit auch ein Literal. 
 
 \textbf{Nicht} A wird wie folgt geschrieben: \( \neg A \)
 
@@ -115,7 +116,7 @@ Die negation ist keine Verknüpfung sondern invertiert eine Logische Aussage. Si
   \item Feuer ist \textbf{nicht} heiss. (f)
 \end{itemize}
 
-\subsubsection{Konjunktion (und)}
+\subsubsection{Konjunktion (und) $\land$}
 A \textbf{und} B wird wie folgt geschrieben: \( A \land B \)
 
 Sie bindet am zweit stärksten direkt nach der Negation.
@@ -139,7 +140,7 @@ Sie bindet am zweit stärksten direkt nach der Negation.
 \end{itemize}
 
 
-\subsubsection{Disjunktion (oder)}
+\subsubsection{Disjunktion (oder) $\lor$}
 A \textbf{oder} B wird wie folgt geschrieben: \( A \lor B \)
 
 Sie bindet ebenfalls am zweit stärksten direkt nach der Negation.
@@ -153,7 +154,7 @@ Sie bindet ebenfalls am zweit stärksten direkt nach der Negation.
   1 & 1 & 1\\
 \end{tabular}\break
 
-Beim Logischem oder ist anzumerken, dass es sich vom entweder oder unterschiedet indem, dass wenn beide Seiten korrekt sind ist das Ergebnis auch Korrekt.
+Beim logische oder $(\lor)$ ist anzumerken, dass es sich vom “entweder oder” unterschiedet, sofern beide Seiten korrekt sind wird auch das Ergebnis korrekt sein (wahr).
 
 \subsubsection*{Beispiele}
 
@@ -168,7 +169,7 @@ Beim Logischem oder ist anzumerken, dass es sich vom entweder oder unterschiedet
 
 \textbf{Wenn} A, \textbf{dann} B wird wie folgt geschrieben: \( A \implies B \)
 
-Sie bindet am dritt stärksten nach der Konjunktion und der Disjunktion.
+Sie bindet am dritt stärksten nach der Konjunktion und der Disjunktion. Eine Gesamtübersicht zu Bindungsstärken findet sich in der Mengenlehre zum Schluss nochmals.
 \subsubsection*{Wahrheitstabelle}
 \begin{tabular}{c|c || c}
   A & B & \( A \implies B \) \\
@@ -222,29 +223,28 @@ Genau dann, wenn Max am Feuer sitzt, hat er warm.
   \item Max sitzt am Feuer und er hat warm. \textit{(Wahr)}
 \end{itemize}
 \subsection{Atomare Aussage}
-Eine Atomare Aussage, ist eine Aussage ohne jeglichen Verknüpfungen oder Negationen. Also bei der Aussagelogischer Formel ( \(f = A \land \neg B \land B\) ) sind die Atomaren Aussagen ( \(A\) und \(B\) ).
+Eine atomare Aussage ist eine Aussage ohne jegliche Verknüpfungen oder Negationen. Bei der aussagelogischen Formel ( \(f = A \land \neg B \land B\) ) sind die atomaren Aussagen ( \(A\) und \(B\) ).
 
 \subsection{Literal}
-Ein Literal, ist eine Aussage ohne jeglichen Verknüpfungen. Im Gegensatz zur Atomaren Aussage sind hier Negationen nicht ausgeschlossen. Also bei der Aussagelogischer Formel ( \(f = A \land \neg B \land B\) ) sind die Literal ( \(A\), \(B\) und \(\neg B\) ).
+Ein Literal ist eine Aussage ohne jegliche Verknüpfungen. Im Gegensatz zur atomaren Aussage sind hier Negationen nicht ausgeschlossen. Also sind bei der aussagelogischen Formel ( \(f = A \land \neg B \land B\) ) die Literale ( \(A\), \(B\) und \(\neg B\) ).
 
 
 
 %\newpage
 \subsection{Aussagenlogische Formel}
-In der Aussagenlogischen Formel können nun komplexe Zusammenhänge erstellt werden. Wie zum Beispiel:
+In der aussagenlogischen Formel können nun komplexe Zusammenhänge erstellt werden. Wie zum Beispiel:
 
 \begin{displaymath}
  f = (A \land B) \implies C
 \end{displaymath}
 
 \subsubsection{Syntax}
-Regeln wie elementare Zeichen (Symbole) – oder auch Symbolgruppen – korrekt
-zusammengesetzt werden dürfen. 
+Regeln wie elementare Zeichen (Symbole) – oder auch Symbolgruppen – korrekt zusammengesetzt werden dürfen. 
 
 \subsubsection{Semantik}
 Bedeutungslehre. Zwei aussagenlogische Formeln sind semantisch gleich oder äquivalent (symbolisch \(f \equiv g\)), wenn ihre Wahrheitstabellen identisch sind. Beachte das Symbol unterscheidet sich vom \( \iff \).
 
-Daher, dass gewisse Ausdrücke Semantisch äquivalent sein können ergeben sich folgende Rechengesetze:
+Daher, dass gewisse Ausdrücke semantisch äquivalent sein können ergeben sich folgende Rechengesetze:
 
 \begin{tabular}{l|cc}
   \textbf{Name} & \textbf{Gesetz} \\
@@ -267,13 +267,12 @@ Daher, dass gewisse Ausdrücke Semantisch äquivalent sein können ergeben sich 
   Negationsgesetz & \(\neg\neg A \equiv A\)\\
 \end{tabular}
 
-
 Wobei sich das Absorptionsgesetz auf dem Idempotenzgesetz und dem Identitatsgesetz aufbaut.
 
 \subsection{Normalformen}
-Das Ziel der Normalformen ist es eine Komplexe Formel in eine semantisch äquivalente einfacher zu verstehende form zu bringen.
+Das Ziel der Normalformen ist es eine komplexe Formel in eine semantisch äquivalente einfacher zu verstehende Form zu bringen.
 \subsubsection{Konjunktive Normalform (KNF)}
-In der KNF ist es das Ziel, dass im obersten level der Aussagelogischen Formel nur Konjunktionen vorhanden sind. Diese halten so genante "Klauseln der konjunktiven Normalform" zusammen.
+In der KNF ist es das Ziel, dass im obersten Level der aussagelogischen Formel nur Konjunktionen vorhanden sind. Diese halten so genannte “Klauseln der konjunktiven Normalform” zusammen.
 \begin{displaymath}
   f = f_1 \land f_2 \land ... \land f_n
 \end{displaymath}
@@ -285,18 +284,18 @@ Die \(f_1\) bis \(f_n\) sind dabei die Klauseln, wobei eine solche Klausel aus D
 
 \subsubsection{Disjunktive Normalform (KNF)}
 
-In der DNF ist es das Ziel, dass im obersten level der Aussagelogischen Formel nur Disjunktionen vorhanden sind. Diese halten so genante "Klauseln der disjunktiven Normalform" zusammen.
+In der DNF ist es das Ziel, dass im obersten level der Aussagelogischen Formel nur Disjunktionen vorhanden sind. Diese halten so genannte “Klauseln der disjunktiven Normalform” zusammen.
 \begin{displaymath}
   f = f_1 \lor f_2 \lor ... \lor f_n
 \end{displaymath}
 
-Die \(f_1\) bis \(f_n\) sind dabei die Klauseln, wobei eine solche Klausel aus Disjunktion und Literalen bestehen. Hier am beispiel von der ersten Klausel:
+Die \(f_1\) bis \(f_n\) sind dabei die Klauseln, wobei eine solche Klausel aus Disjunktion und Literalen bestehen. Hier am Beispiel von der ersten Klausel:
 \begin{displaymath}
   f_1 = L_{11} \land L_{12} \land ... \land L_{1n} 
 \end{displaymath}
 
 
-\subsubsection{Beispiele}
+\subsubsection{Weitere Beispiele}
 \begin{itemize}
   \item \((A \lor B) \land (C \lor \neg D) \land (\neg E \lor F)  \) (KNF)
   \item \((A \land B) \lor (C \land \neg D) \lor (\neg E \land F)  \) (DNF)
@@ -318,9 +317,9 @@ Wenn diese Belegung nun die Aussagelogische Formel wahr macht, so wird die Beleg
 %TODO: Beispiel für Belegung und Model... Wie wird das geschrieben?
 
 \subsection{Erfüllbarkeit}
-Wenn eine Aussagenlogische Formel wird \textbf{erfüllbar} gennant, wenn mindestens ein Modell in der Wahrheitstabelle gefunden werden kann. Falls kein Modell gefunden werden kann, so handelt es sich um eine \textbf{Kontradiktion / Widerspruch}. \textit{Das warme Feuer ist kalt.}
+Es wird eine aussagenlogische Formel \textbf{erfüllbar} genannt, wenn mindestens ein Modell in der Wahrheitstabelle gefunden werden kann. Falls kein Modell gefunden werden kann handelt es sich um eine \textbf{Kontradiktion / Widerspruch}. \textit{Das warme Feuer ist kalt.}
 
-Falls in der Wahrheitstabelle nur Modelle gefunden werden können, so nennen wir die Aussagenlogische Formel eine \textbf{Tautologie}. \textit{Das warme oder kalter Feuer.} 
+Falls in der Wahrheitstabelle nur Modelle gefunden werden können nennen wir die aussagenlogische Formel eine \textbf{Tautologie}. \textit{Das warme oder kalter Feuer.} 
 
 \subsection{Prädikate}
 In der Pradikatenlogik wollen wir jetzt nicht mehr Eigenschaften einzelner Objekte betrachten wie z.B. dem Feuer,
@@ -328,8 +327,7 @@ sondern die Eigenschaften einer ganzen Menge (mehr zu Mengen im nächsten Kapite
 
 Wir haben eine Menge an Geometrischen formen und wollen herausfinden welche davon rund sind, können wir ein Prädikat aufstellen: \( P(x) := \) "x ist rund".
 
-
-Unser Prädikat \( P(x) \) wird erst zur Aussage, wenn für x ein Objekt eingesetzt wird. Solange kein Objekt eingesetzt ist, kann das Prädikat auch nicht auf wahr oder falsch definiert werden und ist deshalb auch noch keine Aussage. Wenn nun ein Recheck für x eingesetzt wird, können wir feststellen, dass die Aussage \textit{"Rechteck ist rund"} falsch ist.
+Unser Prädikat \( P(x) \) wird erst zur Aussage, wenn für x ein Objekt eingesetzt wird. Solange kein Objekt eingesetzt ist, kann das Prädikat auch nicht auf wahr oder falsch definiert werden und ist deshalb auch noch keine Aussage. Wenn nun ein Rechteck für x eingesetzt wird, können wir feststellen, dass die Aussage \textit{"Rechteck ist rund"} falsch ist.
 
 Ein Prädikat kann auch mehre Variablen enthalten, das ist dann ein n-stelliges-Prädikat. \( n = 0 \) wäre dann eine einfache Aussage.
 
@@ -342,7 +340,7 @@ Ein Prädikat kann auch mehre Variablen enthalten, das ist dann ein n-stelliges-
   \item \(Q(x, y, z) = \) x ist grösser als y und z.
  
   \(Q(3, 2, 2) \) ist wahr und \(Q(3, 2, 3)\) falsch.
-  \item \(Z() = \) Ein Prädikat ohne variabel ist eine Aussage.
+  \item \(Z() = \) Ein Prädikat ohne Variablen ist eine Aussage.
  
   \(Z() \) ist wahr.
 \end{itemize}
@@ -350,10 +348,10 @@ Ein Prädikat kann auch mehre Variablen enthalten, das ist dann ein n-stelliges-
 Wie im Beispiel gerade gut zu sehen ist, wird das Prädikat zur Aussage sobald die Variablen durch effektive Werte ersetzt werden. Dies nennen wir dann eine \textbf{Belegung}
 \newpage
 \subsubsection{Quantoren}
-Wir können nun, mithilfe der folgenden drei Quantoren, Logische Aussagen über die Prädikate machen.
+Wir können nun, mithilfe der folgenden drei Quantoren, logische Aussagen über die Prädikate machen.
 
 
-Folgende Quantoren ergeben die (Prädikaten) Aussagen, welche wiederum entweder wahr oder falsch sind.
+Folgende Quantoren ergeben die (Prädikaten) Aussagen, welche wiederum entweder “wahr” oder “falsch” sind.
 \begin{itemize}
   \item $\forall x : P(x)$ Für \textbf{alle} x ist $P(x)$ wahr.
   \item $\exists x : P(x)$ Für \textbf{mindestens} ein x ist $P(x)$ wahr.
@@ -377,7 +375,7 @@ Es gibt ein paar Gesetze zu beachten:
 
 Diese Quantoren können nun mit den anderen Verknüpfungen kombiniert werden, wobei die Quantoren am \textbf{stärksten} binden.
 \subsubsection{Beispiele}
-"Nicht alle StarWars fans finden die letzte StarWars Reihe gut."
+"Nicht alle StarWars Fans finden die letzte StarWars Reihe gut."
 
 Dabei ist das Prädikat $S(x) = $ "x findet die letzte StarWars Reihe gut."
 \begin{displaymath}
@@ -524,7 +522,8 @@ $B$ (:= offizielle Hauptstadt) := \{Canberra, Ottawa, Stockholm, London, Bern\} 
 
 \subsubsection{Symmetrische Differenz $\Delta$}
 Bei der symmetrischen Differenz werden die Gemeinsamkeiten beider Mengen ausgeschlossen.
-$A \Delta B$ := \{$(x \in A \land x \not\in B) \land (x \in B \land x \not\in A)$\} \\
+$A \Delta B$ := \{$(x \in A \land x \not\in B) \land (x \in B \land x \not\in A)$\}
+
 \textbf{Beispiele:} \\ 
 $A$ := \{b, o, v, w, z\}, $B$ := \{v, w, z, u, m\} \\
 $A \Delta B$ := \{b, o, u, m\}
@@ -542,7 +541,16 @@ $A^{c} \equiv \vec{A}$ := \{$x \in G$ : $x \not\in A$\} = $G \setminus A$ \\
 \subsubsection{Kartesisches Produkt $\times$}
 Dies bezeichnet eine Menge geordneter Paare: \\
 $A \times B$ := \{$(x, y) | x \in A \land y \in B$\} \\
-\textbf{Beispiel:} $A \times B$ := \{$(2,8), (2,16), (4,8), (4,16)$\}
+
+\textbf{Beispiele:} \\
+$A$ := \{2, 4\} \\
+$B$ := \{8, 16\} \\
+$A \times B$ := \{$(2,8), (2,16), (4,8), (4,16)$\}
+
+$A \times B$ := \{$(x,y) | x \in A \land y \in B$\} \\
+$A$ (:= Bewohner) := \{Bewohner1, Bewohner2\} \\
+$B$ (:= Waschtage) := \{Dienstag, Donnerstag\} \\
+$A \times B$ := \{(Bewohner1, Dienstag), (Bewohner1, Donnerstag), (Bewohner2, Dienstag), (Bewohner2, Donnerstag)\}
 
 \subsection{Gesetze der Mengenalgebra}
 Generell ist zusätzlich nur die Elementeoperation $\in$ notwendig, alle weiteren Operatoren können von der Logik übernommen werden. \\
