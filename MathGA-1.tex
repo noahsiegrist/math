@@ -9,8 +9,8 @@
 \usepackage{index} %custom indexing%
 \usepackage[singlespacing]{setspace} %set spacing property%
 \usepackage{tabularx} %format tabular%
-%\usepackage{bbold}
 \usepackage{makecell}
+\usepackage{tikz}
 
 \usepackage[utf8]{inputenc} %Umlaute etc.%
 \usepackage[ngerman]{babel} %German charset%
@@ -567,13 +567,6 @@ $\mathbb{R}$ ist überabzählbar unendlich.
 
 
 
-
-
-
-
-
-
-
 \subsubsection*{Beispiele zur Mengenlehre}
 $x \in $ M : x ist ein Element von der Menge M \\
 \\
@@ -582,11 +575,44 @@ A := \{Biene, Wespe, Marienkäfer\} ist eine Menge von Insekten \\
 B := \{BMW, Audi, Ferrari\} ist eine Menge von Automarken \\
 \\
 \textbf{Beschreibende Form} \\
-%REWORK
-%$A$ := \{$n : n \in \mathbb {N} \land n < 10 \land \(\exists k \in \mathbb{N} : n = 2k -1\)$\} \\
-%Hier würden alle ungeraden natürlichen Zahlen kleiner als 10 in die Menge A aufgenommen werden \\
-\textbf{Venn Diagramme} \\
-...
+Hier werden alle \textbf{ungeraden natürlichen Zahlen kleiner als 10} in die Menge A aufgenommen. \\
+\{\(n : n \in \mathbb{N} \land n < 10 \land (\exists k \in \mathbb{N} : n = 2k -1)\)\} \\
 
+\textbf{Venn Diagramme} \\
+\\
+Hier dargestellt als Diagramm die Formel der 3 Mengen \(A, B, C\): \((A \cap B) \cup (A \cap C) \cup (B \cap C)\) \\
+Im zweiten Diagramm sieht man noch die Vereinfachung davon: \((A \cap C) \)\\
+\\
+\def\firstcircle{(90:1.25cm) circle (1.5cm)}
+  \def\secondcircle{(210:1.25cm) circle (1.5cm)}
+  \def\thirdcircle{(330:1.25cm) circle (1.5cm)}
+    \begin{tikzpicture}
+      \begin{scope}
+    \clip \secondcircle;
+    \fill[cyan] \thirdcircle;
+      \end{scope}
+      \begin{scope}
+    \clip \firstcircle;
+    \fill[cyan] \thirdcircle;
+      \end{scope}
+      \begin{scope}
+    \clip \firstcircle;
+    \fill[cyan] \secondcircle;
+      \end{scope}
+      \draw \firstcircle node[text=black,above] {$A$};
+      \draw \secondcircle node [text=black,below left] {$B$};
+      \draw \thirdcircle node [text=black,below right] {$C$};
+    \end{tikzpicture}
+    \begin{tikzpicture}
+      \begin{scope}
+    \clip \firstcircle;
+    \fill[cyan] \thirdcircle;
+      \end{scope}
+      \draw \firstcircle node[text=black,above] {$A$};
+      \draw \secondcircle node [text=black,below left] {$B$};
+      \draw \thirdcircle node [text=black,below right] {$C$};
+    \end{tikzpicture}
+\\
+Man sieht schön, wie ein Venn Diagramm aufgebaut ist. Dies gilt natürlich auch für alle anderen Operationen. \\
 
 \end{document}
